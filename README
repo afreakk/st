@@ -1,3 +1,32 @@
+Changes
+-------
+Applied patches in `/pacthes`
+Custom changes:
+
+In normalMode.c:474
+```
+
+	if (ksym) {
+		if (*ksym ==  XK_Left) {
+			len = 1;
+			cs[0] = 'h';
+		}
+		else if (*ksym ==  XK_Right) {
+			len = 1;
+			cs[0] = 'l';
+		}
+		else if (*ksym ==  XK_Up) {
+			len = 1;
+			cs[0] = 'k';
+		}
+		else if (*ksym ==  XK_Down) {
+			len = 1;
+			cs[0] = 'j';
+		}
+	}
+```
+
+
 st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.

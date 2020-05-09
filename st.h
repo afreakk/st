@@ -73,6 +73,7 @@ int currentLine(int, int);
 void kscrolldown(const Arg *);
 void kscrollup(const Arg *);
 void normalMode(Arg const *);
+void externalpipe(const Arg *);
 
 void printscreen(const Arg *);
 void printsel(const Arg *);
