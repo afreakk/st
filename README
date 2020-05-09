@@ -25,6 +25,7 @@ In normalMode.c:474
 		}
 	}
 ```
++ externalpipe stuff and basic settings in config.def.h
 
 
 st - simple terminal
