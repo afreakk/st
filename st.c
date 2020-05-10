@@ -2009,7 +2009,7 @@ externalpipe(const Arg *arg)
 	oldsigpipe = signal(SIGPIPE, SIG_IGN);
 	newline = 0;
 	for (n = 0; n < term.row; n++) {
-		bp = term.line[n];
+		bp = TLINE(n);
 		lastpos = MIN(tlinelen(n) + 1, term.col) - 1;
 		if (lastpos < 0)
 			break;
@@ -2017,7 +2017,7 @@ externalpipe(const Arg *arg)
 		for (; bp < end; ++bp)
 			if (xwrite(to[1], buf, utf8encode(bp->u, buf)) < 0)
 				break;
-		if ((newline = term.line[n][lastpos].mode & ATTR_WRAP))
+		if ((newline = TLINE(n)[lastpos].mode & ATTR_WRAP))
 			continue;
 		if (xwrite(to[1], "\n", 1) < 0)
 			break;
