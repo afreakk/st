@@ -1,31 +1,11 @@
-Changes
+Diff from upstream
 -------
-Applied patches in `/pacthes`
+Applied patches in /patches
 Custom changes:
-
-In normalMode.c:474
-```
-
-	if (ksym) {
-		if (*ksym ==  XK_Left) {
-			len = 1;
-			cs[0] = 'h';
-		}
-		else if (*ksym ==  XK_Right) {
-			len = 1;
-			cs[0] = 'l';
-		}
-		else if (*ksym ==  XK_Up) {
-			len = 1;
-			cs[0] = 'k';
-		}
-		else if (*ksym ==  XK_Down) {
-			len = 1;
-			cs[0] = 'j';
-		}
-	}
-```
-+ externalpipe stuff and basic settings in config.def.h
++ ArrowKeys emulate hjkl in normalMode
++ externalpipe scripts/hotkeys 
++ externalpipe modified to work with scrollback 
++ basic settings in config.def.h
 
 
 st - simple terminal
