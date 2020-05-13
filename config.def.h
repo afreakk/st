@@ -204,7 +204,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,		XK_X,		externalpipe,   {.v = openurlcmd} },
 	{ TERMMOD,		XK_O,		externalpipe,   {.v = copyoutput} },
 	{ TERMMOD,		XK_A,		externalpipe,   {.v = editscreen} },
-	/* { TERMMOD,              XK_T,		newterm,        {.i =  0} }, */
+	{ TERMMOD,              XK_T,		newterm,        {.i =  0} },
 };
 
 /*
