@@ -1,0 +1,16 @@
+#!/bin/sh
+
+urlregex="(((http|https)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@$&%?$#=_-]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)"
+
+urls="$(tr -d '\n' | sed -r 's/\s│\s+│\s+\|\s//g' |
+    grep -aEo "$urlregex" | # grep only urls as defined above.
+    uniq | # Ignore neighboring duplicates.
+    sed 's/^www./http:\/\/www\./g' |
+    tac)"
+
+[ -z "$urls" ] && exit
+
+chosen="$(echo "$urls" | dmenu -i -p 'Follow which url?' -l 10)"
+
+# setsid xdg-open "$chosen" >/dev/null 2>&1 &
+setsid linkhandler "$chosen" >/dev/null 2>&1 &

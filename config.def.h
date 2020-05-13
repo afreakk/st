@@ -198,9 +198,9 @@ static Shortcut shortcuts[] = {
 	/* { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} }, */
 	/* { TERMMOD,		XK_E,		kscrollup,      {.i =  1} }, */
 	/* { TERMMOD,		XK_N,		kscrolldown,    {.i =  1} }, */
-	/* { TERMMOD,		XK_X,		externalpipe,   {.v = openurlcmd} }, */
-	/* { TERMMOD,		XK_O,		externalpipe,   {.v = copyoutput} }, */
-	/* { TERMMOD,		XK_A,		externalpipe,   {.v = editscreen} }, */
+	{ TERMMOD,		XK_X,		externalpipe,   {.v = openurlcmd} },
+	{ TERMMOD,		XK_O,		externalpipe,   {.v = copyoutput} },
+	{ TERMMOD,		XK_A,		externalpipe,   {.v = editscreen} },
 	/* { TERMMOD,              XK_T,		newterm,        {.i =  0} }, */
 };
 
