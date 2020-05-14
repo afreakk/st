@@ -19,7 +19,7 @@ static int borderpx = 2;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = "scroll";
+char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -70,7 +70,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st";
+char *termname = "st-256color";
 
 /*
  * spaces per tab
@@ -96,7 +96,7 @@ float alpha = 0.8;
 static const char *colorname[] = {
   /* 8 normal colors */
   [0] = "#1d2021", /* hard contrast: #1d2021 / soft contrast: #32302f default: #282828*/
-  [1] = "#cc241d", /* red     */
+  [1] = "#e65b55", /* red     */
   [2] = "#98971a", /* green   */
   [3] = "#d79921", /* yellow  */
   [4] = "#458588", /* blue    */
@@ -106,7 +106,7 @@ static const char *colorname[] = {
 
   /* 8 bright colors */
   [8]  = "#928374", /* black   */
-  [9]  = "#fb4934", /* red     */
+  [9]  = "#fb6b5a", /* red     */
   [10] = "#b8bb26", /* green   */
   [11] = "#fabd2f", /* yellow  */
   [12] = "#83a598", /* blue    */
@@ -173,7 +173,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define AltMask Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
@@ -182,6 +182,8 @@ static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler", "externalpipe", 
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
 
 static char *editscreen[] = { "/bin/sh", "-c", "editscreen.sh", "externalpipe", NULL };
+static char *autocomplete[] = { "/bin/sh", "-c", "autocomplete.sh", "externalpipe", NULL };
+static char *autocompleteclip[] = { "/bin/sh", "-c", "autocomplete-clip.sh", "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -201,10 +203,12 @@ static Shortcut shortcuts[] = {
 	/* { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} }, */
 	/* { TERMMOD,		XK_E,		kscrollup,      {.i =  1} }, */
 	/* { TERMMOD,		XK_N,		kscrolldown,    {.i =  1} }, */
-	{ TERMMOD,		XK_X,		externalpipe,   {.v = openurlcmd} },
-	{ TERMMOD,		XK_O,		externalpipe,   {.v = copyoutput} },
-	{ TERMMOD,		XK_A,		externalpipe,   {.v = editscreen} },
-	{ TERMMOD,              XK_T,		newterm,        {.i =  0} },
+	{ MODKEY,		XK_u,		externalpipe,   {.v = openurlcmd} },
+	/* { MODKEY,		XK_O,		externalpipe,   {.v = copyoutput} }, */
+	{ MODKEY,		XK_v,		externalpipe,   {.v = editscreen} },
+	{ MODKEY,		XK_r,		externalpipe,   {.v = autocomplete} },
+	{ MODKEY,		XK_g,		externalpipe,   {.v = autocompleteclip} },
+	{ MODKEY,		XK_s,		newterm,        {.i =  0} },
 };
 
 /*
