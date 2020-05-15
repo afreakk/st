@@ -208,7 +208,6 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,		XK_v,		externalpipe,   {.v = editscreen} },
 	{ MODKEY,		XK_r,		externalpipe,   {.v = autocomplete} },
 	{ MODKEY,		XK_g,		externalpipe,   {.v = autocompleteclip} },
-	{ MODKEY,		XK_s,		newterm,        {.i =  0} },
 };
 
 /*
