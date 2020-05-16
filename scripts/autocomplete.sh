@@ -1,3 +1,4 @@
 #!/bin/sh
-word=$(tr ' ' '\n' | dmenu | tr -d '\n')
-xdotool type $word
+word=$(tr ' ' '\n' | tac | sed 's/^ *//;s/ *$//' | awk '!cnts[$0]++' | dmenu | tr -d '\n')		    
+xdotool type $word		    
+
