@@ -199,15 +199,15 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	/* { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} }, */
-	/* { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} }, */
-	/* { TERMMOD,		XK_E,		kscrollup,      {.i =  1} }, */
-	/* { TERMMOD,		XK_N,		kscrolldown,    {.i =  1} }, */
-	{ MODKEY,		XK_u,		externalpipe,   {.v = openurlcmd} },
-	/* { MODKEY,		XK_O,		externalpipe,   {.v = copyoutput} }, */
-	{ MODKEY,		XK_v,		externalpipe,   {.v = editscreen} },
-	{ MODKEY,		XK_r,		externalpipe,   {.v = autocomplete} },
-	{ MODKEY,		XK_g,		externalpipe,   {.v = autocompleteclip} },
+	/* { ShiftMask,         XK_Page_Up,     kscrollup,      {.i = -1} }, */
+	/* { ShiftMask,         XK_Page_Down,   kscrolldown,    {.i = -1} }, */
+	/* { TERMMOD,XK_E,      kscrollup,      {.i =  1} }, */
+	/* { TERMMOD,XK_N,      kscrolldown,    {.i =  1} }, */
+	{ MODKEY,               XK_u,          externalpipe,   {.v = openurlcmd} },
+	/* { MODKEY,XK_O,       externalpipe,   {.v = copyoutput} }, */
+	{ MODKEY,               XK_v,          externalpipe,   {.v = editscreen} },
+	{ MODKEY,               XK_r,          externalpipe,   {.v = autocomplete} },
+	{ MODKEY,               XK_g,          externalpipe,   {.v = autocompleteclip} },
 };
 
 /*
