@@ -183,7 +183,7 @@ static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NUL
 
 static char *editscreen[] = { "/bin/sh", "-c", "editscreen.sh", "externalpipe", NULL };
 static char *autocomplete[] = { "/bin/sh", "-c", "autocomplete.sh", "externalpipe", NULL };
-static char *autocompleteclip[] = { "/bin/sh", "-c", "autocomplete-clip.sh", "externalpipe", NULL };
+static char *autocompleteclip[] = { "/bin/sh", "-c", "autocomplete.sh clipboard", "externalpipe", NULL };
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
